@@ -36,10 +36,26 @@ let photo5 = {
 
 let eachPhotos = [photo1, photo2, photo3, photo4, photo5];
 
-let currentPhoto = 3;
+let currentPhoto = 0;
 
 $('#photo').attr('src', eachPhotos[currentPhoto].photo);
 
 $('#photo-title').text(eachPhotos[currentPhoto].title);
 
 $('#photo-description').text(eachPhotos[currentPhoto].description);
+
+let loadPhoto = (photoNumber) => {
+    $('#photo').attr('src', eachPhotos[photoNumber].photo);
+  }
+
+  loadPhoto(currentPhoto);
+
+  $('#forward').click(() => {
+    currentPhoto++;
+    currentPhoto = currentPhoto % eachPhotos.length;
+    loadPhoto(currentPhoto);
+
+  });
+
+
+
