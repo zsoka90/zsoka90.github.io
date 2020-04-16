@@ -8,7 +8,7 @@ body {
 #viewer {
     width: 800px;
     height: 350px;
-    margin: 100px auto;
+    margin: 100px auto 20px auto;
     background: white;
     display: flex;
     justify-content: space-between;
@@ -34,7 +34,7 @@ button {
   outline: 0;
 }
 
-button :hover {
+svg:hover {
     fill: black;
 }
 
@@ -71,4 +71,17 @@ h2 {
 p {
     margin-top: 2px;
     font-size: 0.8rem; 
+}
+
+#tnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tnContainer img {
+    object-fit: cover;
+    width:90px;
+    height:90px;
+    margin: 10px;
 }
