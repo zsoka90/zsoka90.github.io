@@ -6,6 +6,12 @@
 // $('#photo-description').text(photo1.description);
 
 let eachPhotos = [
+  {
+    photo: 'Images/shilouette.jpg',
+    title: 'Shilouette by the Ocean',
+    description: 'There are certain things we always seek out in a new city; a strong local culture, vast natural beauty, an impressive gourmet scene, and most importantly, many beautiful golden beaches, and Santander has all in spades',
+  },
+
     {
     photo: 'Images/3shilouettes.jpg',
     title: 'Three shilouettes by the Ocean',
@@ -34,6 +40,24 @@ let eachPhotos = [
     photo: 'Images/Surfer.jpg',
     title: 'Surfer',
     description: 'There are certain things we always seek out in a new city; a strong local culture, vast natural beauty, an impressive gourmet scene, and most importantly, many beautiful golden beaches, and Santander has all in spades',
+},
+
+{
+    photo: 'Images/OceanAndPlant.jpg',
+    title: 'Ocean and Plant',
+    description: 'There are certain things we always seek out in a new city; a strong local culture, vast natural beauty, an impressive gourmet scene, and most importantly, many beautiful golden beaches, and Santander has all in spades',
+},
+
+{
+  photo: 'Images/OceanAndRocks.jpg',
+  title: 'Ocean and Rocks',
+  description: 'There are certain things we always seek out in a new city; a strong local culture, vast natural beauty, an impressive gourmet scene, and most importantly, many beautiful golden beaches, and Santander has all in spades',
+},
+
+{
+  photo: 'Images/OceanAndStairs.jpg',
+  title: 'Ocean and Stairs',
+  description: 'There are certain things we always seek out in a new city; a strong local culture, vast natural beauty, an impressive gourmet scene, and most importantly, many beautiful golden beaches, and Santander has all in spades',
 }
 
 ];
@@ -48,6 +72,8 @@ let loadPhoto = (photoNumber) => {
     $('#photo').attr('src', eachPhotos[photoNumber].photo);
     $('#photo-title').text(eachPhotos[photoNumber].title);
     $('#photo-description').text(eachPhotos[photoNumber].description);
+    $(".thumbnail").removeClass("active");
+    $(`.thumbnail[data-id=${photoNumber}]`).addClass("active");
   };
 
   
@@ -73,12 +99,15 @@ $(() => {
   });
 
 
+eachPhotos.forEach(function(item, index){
+$("#tnContainer").append(`<div class=thumbnail data-id=${index}> <img src=${item.photo} data-id=${index}> <div class=title>${item.title}</div> </div>`);});
 
-// let createThumbs = $("#tnContainer").append(`<img src=${eachPhotos.photo}>`);
-// eachPhotos.forEach(element => {
-    // createThumbs(element);
-// })
-
-eachPhotos.forEach(function(item){
-  $("#tnContainer").append(`<img src=${item.photo}>`);});
+  $(".thumbnail img").click((event) => {
+    let data = $(event.target).data("id");
+    loadPhoto(data);
+    $(".thumbnail img").removeClass("active");
+    $(event.target).addClass("active");
+  });
+  
+  
   

@@ -81,7 +81,40 @@ p {
 
 #tnContainer img {
     object-fit: cover;
-    width:90px;
-    height:90px;
-    margin: 10px;
+    width: 90px;
+    height: 90px;
+    border: 1px solid darkslategray;
+    border-radius: 3px;
 }
+
+.thumbnail {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    bottom: -35px;
+    text-align: center;
+    width: auto;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    background: gray;
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px 3px darkslategray;
+    font-size: 15px;
+    display: none;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.thumbnail:hover .title {
+    display: initial;
+}
+
+.active {
+    box-shadow: 0px 0px 8px 3px darkslategray;
+}
+
