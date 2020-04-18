@@ -59,7 +59,12 @@ svg:hover {
     opacity: 0.7;
     left: 0;
     right: 0;
-    margin: auto
+    margin: auto;
+    display: none;
+}
+
+#imgContainer:hover #imgData {
+   display: unset;
 }
 
 h2 {
